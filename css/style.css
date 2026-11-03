@@ -1,0 +1,354 @@
+/* ===================================================
+   Data: 01-11-2026
+   Autor: Luis Felippe
+   Versão: 1.0
+=================================================== */
+
+/* VARIÁVEIS CSS: cores principais do tema */
+:root {
+    --cor-vermelho: #ee1515;
+    --cor-amarelo: #ffcb05;
+    --cor-escuro: #222222;
+    --cor-branco: #ffffff;
+    --cor-fundo: #f4f4f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-escuro);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--cor-vermelho);
+    border-bottom: 4px solid var(--cor-amarelo);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#logo-pokemon img {
+    height: 45px;
+    display: block;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: var(--cor-branco);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--cor-amarelo);
+}
+
+/*MAIN E CONTROLES (BARRA DE BUSCA) */
+main {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    flex: 1; 
+}
+
+#barra-busca {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#barra-busca input[type="text"],
+#barra-busca select {
+    padding: 10px 14px;
+    font-size: 15px;
+    border: 2px solid #cccccc;
+    border-radius: 6px;
+    outline: none;
+    transition: 0.3s;
+    text-transform: capitalize;
+}
+
+#barra-busca input[type="text"]:focus,
+#barra-busca select:focus {
+    border-color: var(--cor-vermelho);
+}
+
+#barra-busca input[type="text"] {
+    width: 260px;
+}
+
+#barra-busca input[type="button"] {
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: var(--cor-vermelho);
+    color: var(--cor-branco);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#barra-busca input[type="button"]:hover {
+    background-color: #cc1010;
+}
+
+#status {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* CARDS */
+#container-cards-pokemons {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--cor-branco);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    border-top: 6px solid #cccccc; 
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.btn-favorito {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    color: #ff4757;
+    cursor: pointer;
+    transition: 0.3s;
+    user-select: none;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.15);
+}
+
+.btn-favorito.favoritado {
+    color: #ee1515;
+    transform: scale(1.2);
+}
+
+.card-nome {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+    color: var(--cor-escuro);
+}
+
+.card-imagem {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-id {
+    font-size: 14px;
+    color: #777777;
+    font-weight: bold;
+    margin: 8px 0;
+}
+
+.card-tipos {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.tipo {
+    color: var(--cor-branco);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-info {
+    font-size: 13px;
+    color: #555555;
+}
+
+/*TIPOS DE POKÉMON (BORDA SUPERIOR DO CARD E FUNDO DA ETIQUETA)*/
+.card.tipo-normal { border-top-color: #a8a878; }
+.tipo.tipo-normal { background-color: #a8a878; }
+
+.card.tipo-fire { border-top-color: #f08030; }
+.tipo.tipo-fire { background-color: #f08030; }
+
+.card.tipo-water { border-top-color: #6890f0; }
+.tipo.tipo-water { background-color: #6890f0; }
+
+.card.tipo-grass { border-top-color: #78c850; }
+.tipo.tipo-grass { background-color: #78c850; }
+
+.card.tipo-electric { border-top-color: #f8d030; }
+.tipo.tipo-electric { background-color: #f8d030; }
+
+.card.tipo-ice { border-top-color: #98d8d8; }
+.tipo.tipo-ice { background-color: #98d8d8; }
+
+.card.tipo-fighting { border-top-color: #c03028; }
+.tipo.tipo-fighting { background-color: #c03028; }
+
+.card.tipo-poison { border-top-color: #a040a0; }
+.tipo.tipo-poison { background-color: #a040a0; }
+
+.card.tipo-ground { border-top-color: #e0c068; }
+.tipo.tipo-ground { background-color: #e0c068; }
+
+.card.tipo-flying { border-top-color: #a890f0; }
+.tipo.tipo-flying { background-color: #a890f0; }
+
+.card.tipo-psychic { border-top-color: #f85888; }
+.tipo.tipo-psychic { background-color: #f85888; }
+
+.card.tipo-bug { border-top-color: #a8b820; }
+.tipo.tipo-bug { background-color: #a8b820; }
+
+.card.tipo-rock { border-top-color: #b8a038; }
+.tipo.tipo-rock { background-color: #b8a038; }
+
+.card.tipo-ghost { border-top-color: #705898; }
+.tipo.tipo-ghost { background-color: #705898; }
+
+.card.tipo-dragon { border-top-color: #7038f8; }
+.tipo.tipo-dragon { background-color: #7038f8; }
+
+.card.tipo-dark { border-top-color: #705848; }
+.tipo.tipo-dark { background-color: #705848; }
+
+.card.tipo-steel { border-top-color: #b8b8d0; }
+.tipo.tipo-steel { background-color: #b8b8d0; }
+
+.card.tipo-fairy { border-top-color: #ee99ac; }
+.tipo.tipo-fairy { background-color: #ee99ac; }
+
+/*BOTÃO CARREGAR MAIS */
+#btn-mais {
+    display: block;
+    margin: 30px auto;
+    background-color: var(--cor-amarelo);
+    color: var(--cor-escuro);
+    border: 2px solid var(--cor-escuro);
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#btn-mais:hover {
+    background-color: #e6b700;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: var(--cor-escuro);
+    color: var(--cor-branco);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* ===================================================
+    MEDIA QUERIES (RESPONSIVIDADE)
+=================================================== */
+
+/* Faixa 1 - Notebook e Desktop (acima de 1024px):
+   Utiliza o estilo padrão declarado acima:
+   - Conteúdo centralizado com max-width de 1200px
+   - Grid com 4 ou mais colunas geradas pelo repeat(auto-fill, minmax(220px, 1fr))
+*/
+
+/*Tablets*/
+@media (max-width: 1024px) {
+    main {
+        padding: 15px;
+    }
+
+    #barra-busca input[type="text"] {
+        width: 220px;
+    }
+
+    .card-imagem {
+        width: 130px;
+        height: 130px;
+    }
+
+    .card-nome {
+        font-size: 18px;
+    }
+}
+
+/*Celulares*/
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        gap: 15px;
+    }
+
+    #barra-busca {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #barra-busca input[type="text"],
+    #barra-busca input[type="button"],
+    #barra-busca select {
+        width: 100%;
+    }
+
+    #container-cards-pokemons {
+        grid-template-columns: 1fr;
+    }
+
+    #btn-mais {
+        width: 100%;
+    }
+}

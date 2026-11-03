@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/carregarDados.js" defer></script>
+    <title>Pokedex - API - FECAF</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo-pokemon">
+            <img src="assets/images/pokemon_logo.webp" alt="logo-pokemon">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#container-cards-pokemons">Pokémons</a></li>
+                <li><a href="#" id="link-favoritos">Favoritos</a></li>
+                <li><a href="#sobre">Sobre nós</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="barra-busca">
+            <input type="text" id="busca" placeholder="Buscar Pokémon...">
+            <input type="button" value="Buscar" id="btn-buscar">
+            <select id="filtro-tipo">
+                <option value="">Todos os tipos</option>
+            </select>
+        </section>
+
+         <p id="status" aria-live="polite"></p>
+
+        <section id="container-cards-pokemons">
+        </section>
+        
+        <button id="btn-mais">Carregar mais</button>
+    </main>
+    <footer id="sobre">&copy; 2026 Site para fins educacionais. Luis Felippe </footer>
+</body>
+
+</html>
