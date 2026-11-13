@@ -35,7 +35,7 @@ Como o projeto foi desenvolvido com tecnologias web nativas (sem necessidade de 
 
 1. **Clone o repositório:**
    ```bash
-   git clone https://github.com/SEU-USUARIO/pokedex-pokeapi.git
+   git clone https://github.com/LuisAzeve/pokedex-pokeapi.git
    ```
 
 2. **Acesse a pasta do projeto:**
@@ -44,7 +44,7 @@ Como o projeto foi desenvolvido com tecnologias web nativas (sem necessidade de 
    ```
 
 3. **Abra o arquivo `index.html`:**
-   - Dê um duplo clique no arquivo [index.html](file:///c:/Users/adm.luis.azevedo/OneDrive%20-%20spdmafiliadas/Documentos/Estudo/pokedex-pokeapi/index.html) ou utilize a extensão **Live Server** no VS Code.
+   - Dê um duplo clique no arquivo [index.html] ou utilize a extensão **Live Server** no VS Code.
 
 ---
 
